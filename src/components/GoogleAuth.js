@@ -75,6 +75,6 @@ const mapStateToProps = (state) => {
     };
 };
 
-export default connect(
+export default connect(                 //here we are connecting the actions with the component.
     mapStateToProps, { signIn, signOut}
-)(GoogleAuth);
+)(GoogleAuth);                  
