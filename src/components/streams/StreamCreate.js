@@ -1,5 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from "react-redux";  //this is used for connecting the action creator to the component.
+import { createStream } from "../../actions";
 
 class StreamCreate extends React.Component {
 
@@ -25,9 +27,8 @@ class StreamCreate extends React.Component {
             );
     };
 
-    onSubmit(e) {
-        //e.preventDefault();
-        console.log(e);
+    onSubmit = (formValues) => {
+        this.props.createStream(formValues);
     }
 
 
@@ -56,7 +57,14 @@ const validate = (formValues) => {
     return errors;
 }
 
-export default reduxForm({       //the reduxForm method works like the connect() method in normal redux.
+/* export default reduxForm({       //the reduxForm method works like the connect() method in normal redux.
+    form: "streamCreate",
+    validate: validate
+})(StreamCreate); */
+
+const reduxFormWrapper = reduxForm({       //the reduxForm method works like the connect() method in normal redux.
     form: "streamCreate",
     validate: validate
 })(StreamCreate);
+
+export default connect(null, {createStream})(reduxFormWrapper);
