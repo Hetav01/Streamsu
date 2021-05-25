@@ -1,3 +1,7 @@
+#A simple twitch streaming clone
+this app was developed while learning from the course [Modern React With Redux](https://www.udemy.com/share/101Wz0CUISc1ZRTXw=/) by #[Stephen Grinder](https://github.com/StephenGrider) .
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
